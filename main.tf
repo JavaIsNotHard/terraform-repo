@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami = "ami-0fb653ca2d3203ac1"
+  ami = "ami-0fa3fe0fa7920f68e"
   instance_type = "t3.micro"
 
   user_data = <<-EOF
@@ -19,3 +19,26 @@ resource "aws_instance" "example" {
   }
 }
 
+resource "aws_security_group" "instance" {
+  name = "terraform_example_instance"
+
+  ingress {
+    // from and to port # defines the range of port that are allowed
+    from_port = 8080
+    to_port = 8080
+    protocol = "tcp"
+    // allow traffic from the entire internet
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_security_group" "instance2" {
+  name = "terraform_example_instance2"
+
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "ssh"
+    cidr_blocks = ["160.250.254.108"]
+  }
+}
