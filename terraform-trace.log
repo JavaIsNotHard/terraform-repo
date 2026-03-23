@@ -1,0 +1,79 @@
+2026-02-26T20:33:04.658+0545 [INFO]  Terraform version: 1.14.0
+2026-02-26T20:33:04.658+0545 [DEBUG] using github.com/hashicorp/go-tfe v1.94.0
+2026-02-26T20:33:04.658+0545 [DEBUG] using github.com/hashicorp/hcl/v2 v2.24.0
+2026-02-26T20:33:04.658+0545 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2026-02-26T20:33:04.658+0545 [DEBUG] using github.com/zclconf/go-cty v1.16.3
+2026-02-26T20:33:04.658+0545 [INFO]  Go runtime version: go1.25.4
+2026-02-26T20:33:04.658+0545 [INFO]  CLI args: []string{"terraform", "plan"}
+2026-02-26T20:33:04.658+0545 [TRACE] Stdout is not a terminal
+2026-02-26T20:33:04.658+0545 [TRACE] Stderr is not a terminal
+2026-02-26T20:33:04.658+0545 [TRACE] Stdin is a terminal
+2026-02-26T20:33:04.658+0545 [DEBUG] Attempting to open CLI config file: /Users/jibesh/.terraformrc
+2026-02-26T20:33:04.658+0545 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2026-02-26T20:33:04.658+0545 [INFO]  Loading CLI configuration from /Users/jibesh/.terraform.d/credentials.tfrc.json
+2026-02-26T20:33:04.658+0545 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2026-02-26T20:33:04.658+0545 [DEBUG] ignoring non-existing provider search directory /Users/jibesh/.terraform.d/plugins
+2026-02-26T20:33:04.658+0545 [DEBUG] ignoring non-existing provider search directory /Users/jibesh/Library/Application Support/io.terraform/plugins
+2026-02-26T20:33:04.658+0545 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2026-02-26T20:33:04.658+0545 [INFO]  CLI command args: []string{"plan"}
+2026-02-26T20:33:04.658+0545 [TRACE] Meta.Backend: built configuration for "cloud" backend with hash value 4274856515
+2026-02-26T20:33:04.658+0545 [TRACE] Meta.Backend: working directory was previously initialized for "cloud" backend
+2026-02-26T20:33:04.658+0545 [TRACE] Meta.Backend: using already-initialized, unchanged "cloud" backend configuration
+2026-02-26T20:33:04.658+0545 [TRACE] cloud: using hostname "" from TF_CLOUD_HOSTNAME variable
+2026-02-26T20:33:04.658+0545 [TRACE] cloud: using default hostname "app.terraform.io"
+2026-02-26T20:33:04.658+0545 [TRACE] cloud: using organization "jibesh_org" from cloud config block
+2026-02-26T20:33:04.658+0545 [TRACE] cloud: found workspace name "new-workspace-2" in cloud config block
+2026-02-26T20:33:04.658+0545 [TRACE] cloud: using project "" from TF_CLOUD_PROJECT variable
+2026-02-26T20:33:04.658+0545 [TRACE] cloud: using workspace name "new-workspace-2" from cloud config block
+2026-02-26T20:33:04.659+0545 [DEBUG] Service discovery for app.terraform.io at https://app.terraform.io/.well-known/terraform.json
+2026-02-26T20:33:04.659+0545 [TRACE] HTTP client GET request to https://app.terraform.io/.well-known/terraform.json
+2026-02-26T20:33:08.697+0545 [TRACE] Meta.BackendForPlan: backend *cloud.Cloud supports operations
+2026-02-26T20:33:08.697+0545 [DEBUG] Service discovery for app.terraform.io aliased as localterraform.com
+2026-02-26T20:33:08.697+0545 [TRACE] Meta.Backend: instantiated backend of type *cloud.Cloud
+2026-02-26T20:33:08.698+0545 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2026-02-26T20:33:08.699+0545 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/aws v6.28.0 for darwin_arm64 at .terraform/providers/registry.terraform.io/hashicorp/aws/6.28.0/darwin_arm64
+2026-02-26T20:33:08.699+0545 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/aws/6.28.0/darwin_arm64 as a candidate package for registry.terraform.io/hashicorp/aws 6.28.0
+2026-02-26T20:33:09.035+0545 [DEBUG] checking for provisioner in "."
+2026-02-26T20:33:09.037+0545 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2026-02-26T20:33:09.037+0545 [TRACE] Meta.Backend: backend *cloud.Cloud supports operations
+2026-02-26T20:33:10.326+0545 [INFO]  cloud: starting Plan operation
+[0m[33mRunning plan in HCP Terraform. Output will stream here. Pressing Ctrl-C
+will stop streaming the logs, but will not stop the plan running remotely.[0m
+
+Preparing the remote plan...
+[0m
+2026-02-26T20:33:10.729+0545 [TRACE] backend/cloud: starting configuration upload at "/Users/jibesh/Personal/Learning/terraform/terraform-up-and-running"
+2026-02-26T20:33:11.540+0545 [TRACE] backend/cloud: finished configuration upload
+2026-02-26T20:33:12.041+0545 [TRACE] backend/cloud: reading configuration status
+2026-02-26T20:33:12.345+0545 [TRACE] backend/cloud: configuration uploaded and ready
+[0m[33mTo view this run in a browser, visit:[0m
+[0m[33mhttps://app.terraform.io/app/jibesh_org/new-workspace-2/runs/run-pgCTzMBzLaa2ZgSt[0m
+[0m
+Waiting for the plan to start...
+
+Terraform v1.14.5
+on linux_amd64
+Initializing plugins and modules...
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo valid credential sources found[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with provider["registry.terraform.io/hashicorp/aws"],
+[31m│[0m [0m  on main.tf line 12, in provider "aws":
+[31m│[0m [0m  12: provider "aws" [4m{[0m[0m
+[31m│[0m [0m
+[31m│[0m [0mPlease see https://registry.terraform.io/providers/hashicorp/aws
+[31m│[0m [0mfor more information about providing credentials.
+[31m│[0m [0m
+[31m│[0m [0mError: failed to refresh cached credentials, no EC2 IMDS role found,
+[31m│[0m [0moperation error ec2imds: GetMetadata, exceeded maximum number of attempts,
+[31m│[0m [0m3, request send failed, Get
+[31m│[0m [0m"http://169.254.169.254/latest/meta-data/iam/security-credentials/": dial
+[31m│[0m [0mtcp 169.254.169.254:80: connect: network is unreachable
+[31m│[0m [0m
+[31m╵[0m[0m
+Operation failed: failed running terraform plan (exit 1)
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
