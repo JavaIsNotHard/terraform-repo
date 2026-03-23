@@ -45,6 +45,12 @@ resource "aws_security_group" "example_sg" {
   }
 }
 
+data "aws_vpcs" "all" {}
+
+output "vpc_ids" {
+  value = data.aws_vpcs.all.ids
+}
+
 data "aws_vpc" "default" {
   default = true
 }
@@ -54,6 +60,11 @@ data "aws_subnets" "default" {
     name   = "vpc-id"
     values = [data.aws_vpc.default.id]
   }
+}
+
+data "aws_subnet" "default" {
+  for_each = toset(data.aws_subnets.default.ids)
+  id       = each.value
 }
 
 output "subnet_ids" {
